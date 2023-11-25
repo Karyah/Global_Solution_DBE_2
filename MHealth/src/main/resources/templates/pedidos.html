@@ -1,0 +1,52 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	
+	<body>
+	<div th:replace="~{base :: logo}"></div>
+		
+	<nav class="navbar navbar-expand bg-body-tertiary d-flex justify-content-between mb-3">
+			<div class="navbar-nav">		
+				<a class="nav-link" href="/cadastro"> <b>Cadastro de Usuário</b></a>
+				<a class="nav-link" href="/usuario/home"> <b>Área do Usuário</b></a>
+			</div>
+	</nav>
+	<div class= "container">
+		<div class="card mb-3" th:each="pedido: ${pedidos}">
+		<div class="card-header" th:text="${pedido.usuario.nomeUsuario}"></div>	
+			<div class="card-body">
+                    <div class="row">
+               
+                        <div class="col-12 col-sm-8 mb-3">
+							
+							<div th:if="${pedido.localDor} != null" >  	
+								<p>	<b>Local da Dor: </b><span th:text="${pedido.localDor}">    </span></p>			
+							</div>
+							
+						
+							
+							<div th:if="${pedido.tipoMedicacao} != null" >  	
+								<p>	<b>Tipo de Medicacao: </b><span th:text=${pedido.tipoMedicacao}>    </span></p>			
+							</div>
+							
+							<div th:if="${pedido.tipoComida} != null">  	
+								<p>	<b>Tipo de Comida: </b><span th:text=${pedido.tipoComida}>    </span></p>			
+							</div>
+							
+							<div th:if="${pedido.temperatura} != null">  	
+								<p>	<b>Temperatura: </b><span th:text=${pedido.temperatura}>   </span></p>			
+							</div>
+							
+							
+							<div th:if="${pedido.acompanhante} != null">  	
+								<p>	<b>Acompanhante: </b><span th:text=${pedido.acompanhante}>   </span></p>			
+							</div>
+							
+							
+					
+						</div>
+					</div>
+			</div>
+		</div>
+        </div>
+	</body>
+</html>

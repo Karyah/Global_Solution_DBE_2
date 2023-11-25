@@ -1,0 +1,40 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	
+	<body>
+	<div th:replace="~{base :: logo}"></div>
+	
+	<div class= "container">
+ <div>
+       		<form class="card-body m-5" action="/pedido-comida/novo" method="post">		
+				
+				<div class="form-group">
+       				<label for="cpfUsuario">Seu cpf:</label>
+       				<input class="form-control" name="cpfUsuario">
+       			</div>
+				
+       			<div class="form-group">
+       				<label for="tipoComida">Tipo Comida</label>
+       				<input  class="form-control" name="tipoComida">
+       			</div>
+       			
+       			<div class="form-group">
+       				<label for="temperatura">Temperatura</label>
+       				<input   class="form-control" name="temperatura">
+       			</div>
+       			
+       			<div class="form-group">
+       				<label for="acompanhante">Possui Acompanhante?</label>
+       				<input class="form-control" name="acompanhante">
+       			</div>
+       
+       			<button class="btn btn-primary mt-3" type="submit">Pedir</button>
+       		</form>
+       		</div>
+       			
+	</div>
+
+	</body>
+	
+	
+</html>
